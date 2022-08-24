@@ -83,7 +83,7 @@ li a:active{
     color:white
 }
 
-.menuIcon{
+.menu .menuIcon{
     display: none;
 }
 
@@ -101,6 +101,9 @@ li a:active{
     .opciones{
         width: 80%;
     }
+    .menu .menuIcon{
+        display: none;
+    }
 }
 @media (max-width:700px){
     
@@ -111,11 +114,12 @@ li a:active{
     .social{
         display:none;
     }
-    .menuIcon{
+    .menu .menuIcon{
         display:inline;
-        font-size: 40px;
+        font-size: 40px;    
     }
 }
+    
 /* @media (orientation:landscape) {
     body{
         background-color: red;
