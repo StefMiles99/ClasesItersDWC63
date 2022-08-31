@@ -1,0 +1,14 @@
+.contenedor_tarjetas{
+    /* display: flex;
+    width:90%;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    gap:30px; */
+    display: grid;
+    grid-template-columns: repeat(3,350px) ;
+    /* grid-template-rows: auto 100px; */
+    justify-items: stretch;
+    /* align-items: stretch; */
+    column-gap: 20px;
+    row-gap: 20px;
+}

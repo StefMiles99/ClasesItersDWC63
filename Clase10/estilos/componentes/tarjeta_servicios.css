@@ -1,0 +1,38 @@
+.tarjeta_servicios{
+    /*  width:300px; */
+     height:350px;
+     background-color: white;
+     display: flex;
+     flex-direction: column;
+     border: 10px solid #dc965a;
+     padding:30px;
+     justify-content: space-around;
+     font-family: "Nunito",monospace;
+ }
+.icono-servicio{
+    font-size: 70px;
+}
+.tarjeta_servicios .icono-servicio,
+.tarjeta_servicios span{
+    color: #dc965a;
+}
+.tarjeta_servicios span{
+    font-size: 16px;
+    font-weight: bold;
+}
+.tarjeta_servicios img{
+    width: 100px;
+    height: 100px;
+}
+#tarjeta_especial{
+    grid-column-start:3;
+    grid-column-end: 4;
+}
+#tarjeta_2_rows{
+    height: auto;
+    grid-column-start:2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    
+}
