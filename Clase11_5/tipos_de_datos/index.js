@@ -23,7 +23,7 @@ console.log("Nuevo alumno registrado:" + alumno.nombre)
 
 //Objeto complejo
 
-pc_gamer={
+const pc_gamer={
     motherboard:"MarcaX",
     RAM:{
         tipo:"DDR6",
@@ -60,7 +60,7 @@ console.log("El primer animal en el que penso es: "+ pc_gamer.propietario.animal
 
 console.log(pc_gamer)
 
-grid_servicios=[
+const grid_servicios=[
     {
         titulo:"01.Responsive Layout",
         subtitulo: " Responsive layout design ...",
@@ -78,7 +78,7 @@ grid_servicios=[
     }
 ]
 
-menu_krozo= {
+const menu_krozo= {
     logo:"./img/logo.png",
     opciones:[
         {
