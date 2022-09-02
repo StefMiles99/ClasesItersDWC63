@@ -1,0 +1,21 @@
+
+.parrafo_azul{
+    background-color: blue;
+    color:white
+}
+
+
+
+
+
+    
+/* @media (orientation:landscape) {
+    body{
+        background-color: red;
+    }
+}
+@media (orientation:portrait) {
+    body{
+        background-color: rgb(0, 0, 255);
+    }
+} */
