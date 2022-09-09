@@ -1,0 +1,79 @@
+const menu_principal ={
+    opciones:[
+        {
+            texto:"inicio",
+            link:"./index.html"
+        },
+        {
+            texto:"nosotros",
+            link:"./nosotros.html"
+        },
+        {
+            texto:"planos",
+            link:"./planos.html"
+        },
+        {
+            texto:"presupuesto",
+            link:"./presupuesto.html"
+        }
+    ]
+}
+
+const menu2=[
+    {
+        texto:"inicio",
+        link:"./index.html"
+    },
+    {
+        texto:"nosotros",
+        link:"./nosotros.html"
+    },
+    {
+        texto:"planos",
+        link:"./planos.html"
+    },
+    {
+        texto:"presupuesto",
+        link:"./presupuesto.html"
+    }
+]
+
+const menu_incompleto=[
+    "Inicio",
+    "Nosotros",
+    "Planos",
+    "Presupuesto"
+]
+
+const menu_complicado ={
+    color_fondo:"#F00000",
+    logo:"./imagen_cualquiera.png",
+    opciones:[
+        {
+            texto:"inicio",
+            link:"./index.html",
+            color_primario:"",
+            color_secundario:"",
+            tamanio_inicial:"",
+            tamanio_final:""
+        },
+        {
+            texto:"nosotros",
+            link:"./nosotros.html",
+            color_primario:"",
+            color_secundario:""
+        },
+        {
+            texto:"planos",
+            link:"./planos.html",
+            color_primario:"",
+            color_secundario:""
+        },
+        {
+            texto:"presupuesto",
+            link:"./presupuesto.html",
+            color_primario:"",
+            color_secundario:""
+        }
+    ]
+}
