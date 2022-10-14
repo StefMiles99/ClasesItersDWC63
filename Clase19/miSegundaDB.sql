@@ -1,0 +1,89 @@
+USE railway;
+/* INVESTIGAR SOBRE NORMALIZACION DE BASE DE DATOS*/
+
+/* LAS 12 REGLAS DE CODD*/
+
+
+/*
+ 
+    Vendemos accesorios de computadoras
+        - MARCA
+        - CATEGORIAS
+        - PRECIO
+        - NOMBRE 
+        - DESCRIPCION
+        - FOTO
+    Dos tipos de usuarios
+        - ADMIN va a realizar todo el CRUD
+        - CLIENTE que va a comprar
+    Se tienen que registrar las compras de cada cliente
+        - FEHCA Y HORA
+        - PRODUCTO
+        - CANTIDAD 
+        - MONTO TOTAL
+
+*/
+DROP TABLE IF EXISTS productos;
+DROP TABLE IF EXISTS marcas;
+
+DROP TABLE IF EXISTS categorias;
+
+DROP TABLE IF EXISTS usuarios;
+
+
+CREATE TABLE marcas(
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NOMBRE VARCHAR(50)
+);
+CREATE TABLE categorias(
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NOMBRE VARCHAR(50)
+    -- FOTO VARCHAR(100)
+);
+CREATE TABLE productos(
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID_MARCA INT,
+    ID_CATEGORIA INT,
+    PRECIO DECIMAL(6,2),
+    NOMBRE VARCHAR(50),
+    DESCRIPCION VARCHAR(500),
+    FOTO VARCHAR(100),
+
+    INDEX(ID_MARCA),
+    FOREIGN KEY (ID_MARCA) REFERENCES marcas(ID),
+
+    INDEX(ID_CATEGORIA),
+    FOREIGN KEY (ID_CATEGORIA) REFERENCES categorias(ID)
+);
+
+
+
+CREATE TABLE usuarios(
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NOMBRE VARCHAR(100),
+    EMAIL VARCHAR(320),
+    TIPO VARCHAR(10)
+);
+
+INSERT INTO marcas VALUES
+(0,'eTouch');
+
+INSERT INTO categorias VALUES
+(0,'TECLADOS');
+
+INSERT INTO productos VALUES
+(0,1,1,20.50,'SUPER TECLADO GAMER','ES UN TECLADO MECANICO CON RGB',''),
+(0,1,1,10.50,'TECLADO DE OFICINA','ES UN TECLADO COMUN Y CORRIENTE',''),
+(0,1,1,10.50,'TECLADO DE OFICINA','ES UN TECLADO COMUN Y CORRIENTE','')
+;
+
+SELECT 
+productos.*,
+categorias.NOMBRE AS CATEGORIA_PRODUCTO,
+marcas.NOMBRE AS MARCA_PRODUCTO
+FROM productos
+JOIN categorias
+ON productos.ID_CATEGORIA=categorias.ID
+JOIN marcas 
+ON productos.ID_MARCA= marcas.ID
+

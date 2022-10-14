@@ -15,7 +15,8 @@ CREATE TABLE profesores
     ID VARCHAR(10) PRIMARY KEY,
     NOMBRE VARCHAR(50) NOT NULL,
     APELLIDOS VARCHAR(50),
-    EDAD INT 
+    EDAD INT,
+    SALARIO FLOAT
 );
 
 CREATE TABLE cursos(
@@ -33,19 +34,31 @@ CREATE TABLE cursos(
 -- TRUNCATE profesores; NO SE PUEDE PORQUE TIENE UNA REFERENCIA A OTRA TABLA
 
 INSERT INTO profesores VALUES 
-    ('ABC','Carlos','Gonzales',40),
-    ('ZXY','Carlos','Gonzales',NULL),
-    ('XZQ','Stefano','Miles',NULL),
-    ('OPP','Brian','Gimenez',NULL);
+    ('ABC','Carlos','Gonzales',40,800.0),
+    ('ZXY','Carlos','Guzman',NULL,500.0),
+    ('XZQ','Stefano','Miles',NULL,500.0),
+    ('OPP','Brian','Gimenez',NULL,500.0),
+    ('ZZZ','Joaquin','Paredes',NULL,500.0)
+    ;
   --  ('ZXZ',NULL,'Gonzales',NULL)
-    
+
+INSERT INTO profesores(NOMBRE,ID,SALARIO) VALUES ('Juan','AAA',300.0); 
+
 INSERT INTO cursos VALUES 
     (0,'ABC','CURSO FULLSTACK IMPRESIONANTE, EL MEJOR DE TODOS',120),
     (0,'ZXY','CURSO FRONTEND IMPRESIONANTE, EL MEJOR DE TODOS',120),
     (0,'XZQ','CURSO BACKEND IMPRESIONANTE, EL MEJOR DE TODOS ',120),
     (0,'OPP','CURSO ANALISIS DE DATOS IMPRESIONANTE, EL MEJOR DE TODOS',120),
-    (0,'OPP','CURSO UX/UI IMPRESIONANTE, EL MEJOR DE TODOS',120)
+    (0,'OPP','CURSO UX/UI IMPRESIONANTE, EL MEJOR DE TODOS',120),
+    (0,'XZQ','CURSO DE CIENCIA DE DATOS',150)
     ;
 
-DELETE FROM cursos WHERE ID_PROFESOR='OPP';
-DELETE FROM profesores WHERE ID='OPP'
+
+
+-- DELETE FROM cursos WHERE ID_PROFESOR='OPP';
+-- DELETE FROM profesores WHERE ID='OPP';
+
+
+UPDATE profesores SET edad=25, nombre='Karlos' WHERE ID= 'ZXY';
+
+UPDATE profesores SET salario= salario + 50.0 WHERE salario<=600.0
